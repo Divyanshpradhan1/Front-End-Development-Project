@@ -1,0 +1,50 @@
+// Get elements
+const loginBtn = document.getElementById('loginBtn');
+const registerBtn = document.getElementById('registerBtn');
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+
+// Event Listeners for button clicks on index.html
+if (loginBtn) {
+    loginBtn.addEventListener('click', () => {
+        window.location.href = 'login.html'; // Navigate to login page
+    });
+}
+
+if (registerBtn) {
+    registerBtn.addEventListener('click', () => {
+        window.location.href = 'register.html'; // Navigate to register page
+    });
+}
+
+// Basic form validation for login.html
+if (loginForm) {
+    loginForm.addEventListener('submit', (event) => {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (email === '' || password === '') {
+            alert('Please enter both email and password.');
+            event.preventDefault(); // Prevent form submission if fields are empty
+        }
+        //  Add more robust validation as needed (e.g., email format)
+    });
+}
+
+// Basic form validation for register.html
+if (registerForm) {
+    registerForm.addEventListener('submit', (event) => {
+        const fullName = document.getElementById('fullName').value;
+        const contact = document.getElementById('contact').value;
+        const dob = document.getElementById('dob').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const gender = document.getElementById('gender').value;
+
+        if (fullName === '' || contact === '' || dob === '' || email === '' || password === '' || gender === '') {
+            alert('Please fill in all fields.');
+            event.preventDefault(); // Prevent form submission if fields are empty
+        }
+        //  Add more robust validation here
+    });
+}
